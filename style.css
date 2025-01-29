@@ -1,14 +1,5 @@
 /* Global styles come from external css https://codepen.io/GreenSock/pen/xxmzBrw/fcaef74061bb7a76e5263dfc076c363e.css
- */
- body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    min-height: 200vh;
-    gap: 1rem;
-  }
-  
+ */  
   .box {
     display: block;
     margin-top: 1rem;
@@ -61,8 +52,6 @@
   section{
     width: 100vw;
     min-height: 100vh;
-    margin: 0;
-    background-size: 100vw;
     overflow: hidden;
-    background:top / contain no-repeat url('Firefly\ Univers\,\ étoilé\,\ coloré\,\ immense\,\ galaxie\,\ dans\ l\'espace\,\ nébuleuse\,\ constellation\ \,\ superno.jpg') ;
+    background:top / cover no-repeat url('Univers.jpg') ;
   }
