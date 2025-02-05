@@ -1,4 +1,4 @@
-import { gsap } from "./node_modules/gsap/index.js";
+import { gsap } from "gsap";
 import { Flip } from "gsap/Flip";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Observer } from "gsap/Observer";
