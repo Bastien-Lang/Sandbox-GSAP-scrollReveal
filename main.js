@@ -36,11 +36,92 @@ ScrollReveal().reveal(".rouge", { delay: 0, opacity: 0, duration: 2000,origin: "
 ScrollReveal().reveal(".jaune", { delay: 0, opacity: 0, duration: 3000, origin: 'left' , distance: '5000px', reset: true});
 
 TweenLite.to("#test", 5, {delay:1.5, scrambleText:{text:"I sure hope this works for you.", rightToLeft:true, chars:"lowercase"}})
-*/
 
-/*
+ScrollReveal().reveal('.soleil', { 
+  delay: 0, 
+  opacity: 0, 
+  duration: 1000, 
+  origin: 'left', 
+  distance: '5000px', 
+  reset: true 
+});
 
-gsap.to(".meteor", { x: 800, y: 0, duration:2, rotation: 360 })
-gsap.to(".box2", { x: 800, y: 0, duration:2, rotation: 360 })
+ScrollReveal().reveal('.mercure', { 
+  delay: 0, 
+  opacity: 0, 
+  duration: 1000, 
+  origin: 'right', 
+  distance: '5000px', 
+  reset: true 
+});
 
-*/
+ScrollReveal().reveal('.venus', { 
+  delay: 0, 
+  opacity: 0, 
+  duration: 1000, 
+  origin: 'left', 
+  distance: '5000px', 
+  reset: true 
+});
+
+ScrollReveal().reveal('#terre', { 
+  delay: 0, 
+  opacity: 0, 
+  duration: 1000, 
+  origin: 'left', 
+  distance: '5000px', 
+  reset: true 
+});
+
+ScrollReveal().reveal('.mars', { 
+  delay: 0, 
+  opacity: 0, 
+  duration: 1000, 
+  origin: 'left', 
+  distance: '5000px', 
+  reset: true 
+});
+
+ScrollReveal().reveal('.jupiter', { 
+  delay: 0, 
+  opacity: 0, 
+  duration: 1000, 
+  origin: 'right', 
+  distance: '5000px', 
+  reset: true 
+});
+
+ScrollReveal().reveal('.saturne', { 
+  delay: 0, 
+  opacity: 0, 
+  duration: 1000, 
+  origin: 'left', 
+  distance: '5000px', 
+  reset: true 
+});
+
+ScrollReveal().reveal('.uranus', { 
+  delay: 0, 
+  opacity: 0, 
+  duration: 1000, 
+  origin: 'right', 
+  distance: '5000px', 
+  reset: true 
+});
+
+ScrollReveal().reveal('.neptune', { 
+  delay: 0, 
+  opacity: 0, 
+  duration: 1000, 
+  origin: 'left', 
+  distance: '5000px', 
+  reset: true 
+});
+ScrollReveal().reveal('#lune', { 
+  delay: 0, 
+  opacity: 0, 
+  duration: 1000, 
+  origin: 'right', 
+  distance: '5000px', 
+  reset: true 
+});

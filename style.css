@@ -1,5 +1,6 @@
-/* Global styles come from external css */
-body {
+/* Global styles come from external css https://codepen.io/GreenSock/pen/xxmzBrw/fcaef74061bb7a76e5263dfc076c363e.css
+*/  
+body{
   overflow-x: hidden;
 }
 
@@ -8,28 +9,63 @@ body {
   margin-top: 1rem;
 }
 
-#container {
-  padding: 0 10vh;
+#container{
+  margin-top: 100dvh;
+}
+.punchline{
+  opacity: 0;
 }
 
-* {
+.pink {
+  background-color: pink;
+}
+
+#allemagne{
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+}
+
+.noir, .rouge, .jaune{
+  height: 33dvh;
+}
+
+.noir{
+  background-color: black;
+}
+
+.rouge{
+  background-color: red;
+}
+
+.jaune{
+  background-color: yellow;
+}
+
+#test {
+  font-size: 3em;
+  text-align: right;
+  width: 850px;
+}
+
+*{
   box-sizing: border-box;
-  margin: 0 auto;
 }
 
-#univers {
+#univers{
   width: 100vw;
-  min-height: 100vh;
+  min-height: 100dvh;
   overflow: hidden;
-  background: top / cover no-repeat url('Univers.jpg');
+  background:top / cover no-repeat url('Univers.jpg') ;
 }
 
-.espace {
+#espace{
   width: 100vw;
-  min-height: 800vh;
+  min-height: 800dvh;
   overflow: hidden;
-  background: top / contain repeat url('https://cdn.pixabay.com/photo/2016/01/27/15/25/space-1164579_1280.png');
+  background:top / contain repeat url('https://cdn.pixabay.com/photo/2016/01/27/15/25/space-1164579_1280.png')  ;
   position: relative;
+
 }
 
 #espace::before {
@@ -41,55 +77,68 @@ body {
   height: 100%;
   background: rgba(10, 69, 249, 0.079); /* Bleu semi-transparent */
   pointer-events: none;
-  filter: contrast(0.8) brightness(1.5) blur(1vh);
+      filter: contrast(0.8) brightness(1.5) blur(1px);
 }
 
-#pluiemeteore {
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  z-index: 100;
-}
-
-#pluiemeteore img {
-  width: 10vh; /* Taille ajustée pour s'adapter aux écrans */
-  height: auto;
-  rotate: -20deg;
-  top: 0;
-}
-
-#galaxie {
-  height: 100vh;
-  top: 100vh;
-}
-
-#galaxy {
+.systemeSolaire>div{
   display: flex;
-  width: 110vh; /* Adapté à la hauteur de l'écran */
-  height: auto;
-  rotate: 20deg;
-  top: 0;
+  flex-direction: column;
   align-items: center;
-  position: relative;
+  min-height: 100dvh;
+  justify-content: center;
 }
 
-header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  padding: 1vh;
-  text-align: center;
-  background: linear-gradient(to bottom, black 70%, transparent);
+
+.systemeSolaire>div>div{
+  display: flex;
+  justify-content: space-evenly;
 }
 
-.title {
-  position: absolute;
-  top: 15vh;
+.systemeSolaire>div>div>img{
+  max-width: 50%;
 }
 
-.text {
-  position: absolute;
-  top: 85vh;
-  left: 160vh;
+#soleil{
+  width: 60%;
+}
+
+#mercure{
+  width: 10%;
+}
+
+#venus{
+  width: 17%;
+}
+
+#terre{
+  width: 20%;
+}
+
+#lune{
+  width: 5%;
+  object-fit: contain;
+}
+
+#mars{
+  width: 17%;
+}
+
+#jupiter{
+  width: 50%;
+}
+
+#saturne{
+  width: 45%;
+}
+
+#uranus{
+  width: 37%;
+}
+
+#neptune{
+  width: 38%;
+}
+
+#espaceTerreLune {
+  flex-direction: row;
 }
