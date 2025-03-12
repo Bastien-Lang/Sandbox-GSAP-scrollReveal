@@ -9,11 +9,139 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="C:\Users\houns\Documents\speWEB\Reactjs\ProjetGsap\Sandbox-GSAP-scrollReveal\main.js" type="module"></script>
+    <script src="./main.js" type="text/javascript" ></script>
+    
 </head>
-<body>
-    <section id="univers"></section>
-    <section id="espace"></section>
-    <script src="main.js" type="module"></script>
+<body >
+
+    <header>
+        <button id="startMeteorShower">Start The Meteor Shower</button>
+    </header>
+    
+    
+    <section id="container" class="espace">
+
+        <div id="pluiemeteore">  </div>  
+        <div id="galaxie">  
+           <img src="img/galaxy2.png" alt="galaxy" id="galaxy"> 
+           <h1 class="title">Bienvenue dans l'espace</h1>
+        <p class="text">Decouvrez ici les merveilles de l'univers</p>
+        </div>  
+ 
+    </section>
+
+    <section>
+
+    </section>
 </body>
+
+
+
+<script>
+    // Attendre 3 secondes avant l'explosion
+gsap.delayedCall(3, () => { 
+
+// Flash lumineux pour l'impact
+const flash = document.createElement("div");
+flash.style.position = "fixed";
+flash.style.top = "0";
+flash.style.left = "0";
+flash.style.width = "100vw";
+flash.style.height = "100vh";
+flash.style.background = "white";
+flash.style.opacity = "0";
+flash.style.zIndex = "9999";
+document.body.appendChild(flash);
+
+// Animation du flash
+gsap.to(flash, { opacity: 1, duration: 0.4, ease: "power2.out", yoyo: true, repeat: 1, onComplete: () => flash.remove() });
+
+// Effet d'onde de choc (un cercle qui grossit)
+const shockwave = document.createElement("div");
+shockwave.style.position = "absolute";
+shockwave.style.width = "10vh";
+shockwave.style.height = "10vh";
+shockwave.style.borderRadius = "50%";
+shockwave.style.border = "5px solid rgba(255, 255, 255, 0.8)";
+shockwave.style.top = "50%";
+shockwave.style.left = "50%";
+shockwave.style.transform = "translate(-50%, -50%) scale(0)";
+shockwave.style.zIndex = "9998";
+document.body.appendChild(shockwave);
+
+gsap.to(shockwave, { 
+    scale: 30, 
+    opacity: 0, 
+    duration: 1.5, 
+    ease: "power4.out",
+    onComplete: () => shockwave.remove() 
+});
+
+// Explosion du galaxy
+gsap.to("#galaxy", { 
+    scale: 3,            // Taille plus grande pour un effet massif
+    opacity: 0,          // Disparition progressive
+    rotation: 1080,      // Tourne encore plus vite
+    duration: 5,       // Explosion rapide
+    ease: "expo.out",    // Effet ultra dynamique
+    filter: "blur(15px) brightness(3)", // Flash et distorsion
+});
+
+// Tremblement de l'écran
+gsap.to("body", { 
+    x: "random(-20,20)", 
+    y: "random(-20,20)", 
+    duration: 0.1, 
+    repeat: 5, 
+    yoyo: true, 
+    ease: "power1.inOut"
+});
+});
+
+
+    //gsap.from("#galaxy", { scale: 0.5, opacity: 0, duration: 2, ease: "power2.out" });
+
+     gsap.to(galaxy, { 
+            x: 0, 
+            y: 70, 
+            duration: 5, 
+            repeat: -1,
+            yoyo: true
+        });
+
+        document.getElementById('startMeteorShower').addEventListener('click', () => {
+    const pluiemeteore = document.getElementById('pluiemeteore');
+    
+    function createMeteor() {
+        const meteor = document.createElement('img');
+        meteor.src = 'img/meteor.png';
+        meteor.classList.add('meteor');
+        meteor.style.position = 'absolute';
+        meteor.style.top = '-100px';
+        meteor.style.left = `${Math.random() * (window.innerWidth + 400)}px`; 
+        pluiemeteore.appendChild(meteor);
+        return meteor;
+    }
+
+    function animateMeteor(meteor) {
+        gsap.to(meteor, { 
+            x: -600, 
+            y: 1000, 
+            duration: 2, 
+            delay: Math.random() * 5,
+            onComplete: () => meteor.remove() // Supprimer l'élément après l'animation
+        });
+    }
+
+    let intervalId = setInterval(() => {
+        const meteor = createMeteor();
+        animateMeteor(meteor);
+    }, 1); // Intervalle ajusté
+
+    setTimeout(() => {
+        clearInterval(intervalId);
+    }, 1000); // Arrêt après 10 secondes
+});
+
+</script>
 </html>

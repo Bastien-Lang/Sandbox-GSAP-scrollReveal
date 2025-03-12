@@ -1,83 +1,95 @@
-/* Global styles come from external css https://codepen.io/GreenSock/pen/xxmzBrw/fcaef74061bb7a76e5263dfc076c363e.css
- */  
-  body{
-    overflow-x: hidden;
-  }
-  
-  .box {
-    display: block;
-    margin-top: 1rem;
-  }
+/* Global styles come from external css */
+body {
+  overflow-x: hidden;
+}
 
-  #container{
-    margin-top: 100vh;
-  }
-  .punchline{
-    opacity: 0;
-  }
-  
-  .pink {
-    background-color: pink;
-  }
+.box {
+  display: block;
+  margin-top: 1rem;
+}
 
-  #allemagne{
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-  }
+#container {
+  padding: 0 10vh;
+}
 
-  .noir, .rouge, .jaune{
-    height: 33vh;
-  }
+* {
+  box-sizing: border-box;
+  margin: 0 auto;
+}
 
-  .noir{
-    background-color: black;
-  }
+#univers {
+  width: 100vw;
+  min-height: 100vh;
+  overflow: hidden;
+  background: top / cover no-repeat url('Univers.jpg');
+}
 
-  .rouge{
-    background-color: red;
-  }
+.espace {
+  width: 100vw;
+  min-height: 800vh;
+  overflow: hidden;
+  background: top / contain repeat url('https://cdn.pixabay.com/photo/2016/01/27/15/25/space-1164579_1280.png');
+  position: relative;
+}
 
-  .jaune{
-    background-color: yellow;
-  }
+#espace::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 69, 249, 0.079); /* Bleu semi-transparent */
+  pointer-events: none;
+  filter: contrast(0.8) brightness(1.5) blur(1vh);
+}
 
-  #test {
-    font-size: 3em;
-    text-align: right;
-    width: 850px;
-  }
+#pluiemeteore {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+}
 
-  *{
-    box-sizing: border-box;
-    margin: 0 auto;
-  }
+#pluiemeteore img {
+  width: 10vh; /* Taille ajustée pour s'adapter aux écrans */
+  height: auto;
+  rotate: -20deg;
+  top: 0;
+}
 
-  #univers{
-    width: 100vw;
-    min-height: 100vh;
-    overflow: hidden;
-    background:top / cover no-repeat url('Univers.jpg') ;
-  }
+#galaxie {
+  height: 100vh;
+  top: 100vh;
+}
 
-  #espace{
-    width: 100vw;
-    min-height: 800vh;
-    overflow: hidden;
-    background:top / contain repeat url('https://cdn.pixabay.com/photo/2016/01/27/15/25/space-1164579_1280.png')  ;
-    position: relative;
+#galaxy {
+  display: flex;
+  width: 110vh; /* Adapté à la hauteur de l'écran */
+  height: auto;
+  rotate: 20deg;
+  top: 0;
+  align-items: center;
+  position: relative;
+}
 
-  }
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 1vh;
+  text-align: center;
+  background: linear-gradient(to bottom, black 70%, transparent);
+}
 
-  #espace::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(10, 69, 249, 0.079); /* Bleu semi-transparent */
-    pointer-events: none;
-        filter: contrast(0.8) brightness(1.5) blur(1px);
+.title {
+  position: absolute;
+  top: 15vh;
+}
 
+.text {
+  position: absolute;
+  top: 85vh;
+  left: 160vh;
 }

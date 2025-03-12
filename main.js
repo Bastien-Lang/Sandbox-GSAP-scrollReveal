@@ -1,18 +1,10 @@
-import { gsap } from "gsap";
-import { Flip } from "gsap/Flip";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Observer } from "gsap/Observer";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-import { Draggable } from "gsap/Draggable";
-import { MotionPathPlugin } from "gsap/MotionPathPlugin";
-import { EaselPlugin } from "gsap/EaselPlugin";
-import { PixiPlugin } from "gsap/PixiPlugin";
-import { TextPlugin } from "gsap/TextPlugin";
+//import { gsap } from "node_modules/gsap/dist/gsap";
 
+//import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger) 
+//gsap.registerPlugin(ScrollTrigger) 
 
-var tl = gsap.timeline({delay: 1});
+/*var tl = gsap.timeline({delay: 1});
 let anim = tl.to(".box1", {duration: 1, rotation: -360})
   .to(".box2", {duration: 1, x: -100, ease: 'elastic.out'})
   .to(".box3", {duration: 1, rotation: 360, x: 100, ease: 'expo.out'})
@@ -44,3 +36,11 @@ ScrollReveal().reveal(".rouge", { delay: 0, opacity: 0, duration: 2000,origin: "
 ScrollReveal().reveal(".jaune", { delay: 0, opacity: 0, duration: 3000, origin: 'left' , distance: '5000px', reset: true});
 
 TweenLite.to("#test", 5, {delay:1.5, scrambleText:{text:"I sure hope this works for you.", rightToLeft:true, chars:"lowercase"}})
+*/
+
+/*
+
+gsap.to(".meteor", { x: 800, y: 0, duration:2, rotation: 360 })
+gsap.to(".box2", { x: 800, y: 0, duration:2, rotation: 360 })
+
+*/
