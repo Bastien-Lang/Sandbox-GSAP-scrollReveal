@@ -11,7 +11,7 @@ import { TextPlugin } from "gsap/TextPlugin";
 
 
 
-
+console.log('Hello World!');
 ScrollReveal().reveal('.soleil', { 
   delay: 0, 
   opacity: 0, 

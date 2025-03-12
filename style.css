@@ -10,42 +10,10 @@ body{
 }
 
 #container{
-  margin-top: 100dvh;
+  
 }
 .punchline{
   opacity: 0;
-}
-
-.pink {
-  background-color: pink;
-}
-
-#allemagne{
-  display: flex;
-  flex-direction: column;
-  width: 100vw;
-}
-
-.noir, .rouge, .jaune{
-  height: 33dvh;
-}
-
-.noir{
-  background-color: black;
-}
-
-.rouge{
-  background-color: red;
-}
-
-.jaune{
-  background-color: yellow;
-}
-
-#test {
-  font-size: 3em;
-  text-align: right;
-  width: 850px;
 }
 
 *{
