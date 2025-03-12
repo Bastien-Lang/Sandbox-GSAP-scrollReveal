@@ -1,83 +1,144 @@
 /* Global styles come from external css https://codepen.io/GreenSock/pen/xxmzBrw/fcaef74061bb7a76e5263dfc076c363e.css
- */  
-  body{
-    overflow-x: hidden;
-  }
-  
-  .box {
-    display: block;
-    margin-top: 1rem;
-  }
+*/  
+body{
+  overflow-x: hidden;
+}
 
-  #container{
-    margin-top: 100vh;
-  }
-  .punchline{
-    opacity: 0;
-  }
-  
-  .pink {
-    background-color: pink;
-  }
+.box {
+  display: block;
+  margin-top: 1rem;
+}
 
-  #allemagne{
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-  }
+#container{
+  margin-top: 100dvh;
+}
+.punchline{
+  opacity: 0;
+}
 
-  .noir, .rouge, .jaune{
-    height: 33vh;
-  }
+.pink {
+  background-color: pink;
+}
 
-  .noir{
-    background-color: black;
-  }
+#allemagne{
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+}
 
-  .rouge{
-    background-color: red;
-  }
+.noir, .rouge, .jaune{
+  height: 33dvh;
+}
 
-  .jaune{
-    background-color: yellow;
-  }
+.noir{
+  background-color: black;
+}
 
-  #test {
-    font-size: 3em;
-    text-align: right;
-    width: 850px;
-  }
+.rouge{
+  background-color: red;
+}
 
-  *{
-    box-sizing: border-box;
-    margin: 0 auto;
-  }
+.jaune{
+  background-color: yellow;
+}
 
-  #univers{
-    width: 100vw;
-    min-height: 100vh;
-    overflow: hidden;
-    background:top / cover no-repeat url('Univers.jpg') ;
-  }
+#test {
+  font-size: 3em;
+  text-align: right;
+  width: 850px;
+}
 
-  #espace{
-    width: 100vw;
-    min-height: 800vh;
-    overflow: hidden;
-    background:top / contain repeat url('https://cdn.pixabay.com/photo/2016/01/27/15/25/space-1164579_1280.png')  ;
-    position: relative;
+*{
+  box-sizing: border-box;
+}
 
-  }
+#univers{
+  width: 100vw;
+  min-height: 100dvh;
+  overflow: hidden;
+  background:top / cover no-repeat url('Univers.jpg') ;
+}
 
-  #espace::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(10, 69, 249, 0.079); /* Bleu semi-transparent */
-    pointer-events: none;
-        filter: contrast(0.8) brightness(1.5) blur(1px);
+#espace{
+  width: 100vw;
+  min-height: 800dvh;
+  overflow: hidden;
+  background:top / contain repeat url('https://cdn.pixabay.com/photo/2016/01/27/15/25/space-1164579_1280.png')  ;
+  position: relative;
 
+}
+
+#espace::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 69, 249, 0.079); /* Bleu semi-transparent */
+  pointer-events: none;
+      filter: contrast(0.8) brightness(1.5) blur(1px);
+}
+
+.systemeSolaire>div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100dvh;
+  justify-content: center;
+}
+
+
+.systemeSolaire>div>div{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.systemeSolaire>div>div>img{
+  max-width: 50%;
+}
+
+#soleil{
+  width: 60%;
+}
+
+#mercure{
+  width: 10%;
+}
+
+#venus{
+  width: 17%;
+}
+
+#terre{
+  width: 20%;
+}
+
+#lune{
+  width: 5%;
+  object-fit: contain;
+}
+
+#mars{
+  width: 17%;
+}
+
+#jupiter{
+  width: 50%;
+}
+
+#saturne{
+  width: 45%;
+}
+
+#uranus{
+  width: 37%;
+}
+
+#neptune{
+  width: 38%;
+}
+
+#espaceTerreLune {
+  flex-direction: row;
 }
