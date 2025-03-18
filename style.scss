@@ -27,7 +27,6 @@ body {
   color: white;
   background: black;
   font-family: "Cormorant Garamond", serif;
-  text-transform: uppercase;
 }
 
 h2 {
@@ -183,7 +182,6 @@ body{
 
 .systemeSolaire>div{
   display: flex;
-  flex-direction: column;
   align-items: center;
   min-height: 100dvh;
   justify-content: center;
@@ -191,10 +189,29 @@ body{
 
 
 .systemeSolaire>div>div{
-  display: flex;
-  justify-content: space-evenly;
+  width: 30%;
 }
 
+.soleil > div{
+  margin-right: 2%;
+  width: 23% !important;
+}
+.mercure > div{
+  margin-right: 5%;
+  width: 25% !important;
+}
+.venus > div{
+  margin-right: 5%;
+  width: 25% !important;
+}
+
+.mars > div{
+  margin-right: 7%;
+}
+
+.jupiter > div{
+  width: 25% !important;
+}
 .systemeSolaire>div>div>img{
   max-width: 50%;
 }
@@ -230,45 +247,70 @@ body{
 
 
 
+.terre, .lune{
+  display: flex;
+  width: auto !important;
+  align-items: center;
+  max-width: 50%;
+}
+.systemeSolaire h1, p{
+  font-family: 'Space Grotesk', sans-serif;
+}
+.systemeSolaire h1{
+  text-transform: uppercase;
+}
+.terre>div, .lune>div{
+  width: 50%;
+  margin-right: 7%;
+  margin-left: 7%;
+}
+
+.lune{
+  flex-direction: row-reverse;
+}
+
 #soleil{
-  width: 60%;
+  width: 60vw;
 }
 
 #mercure{
-  width: 10%;
+  width: 10vw;
 }
 
 #venus{
-  width: 17%;
+  width: 17vw;
 }
 
 #terre{
-  width: 20%;
+  width: 20vw; 
+  height: 20vw; 
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 #lune{
-  width: 5%;
+  width: 5vw;
   object-fit: contain;
 }
 
 #mars{
-  width: 17%;
+  width: 17vw;
 }
 
 #jupiter{
-  width: 50%;
+  width: 50vw;
 }
 
 #saturne{
-  width: 45%;
+  width: 45vw;
 }
 
 #uranus{
-  width: 37%;
+  width: 37vw;
 }
 
 #neptune{
-  width: 38%;
+  width: 38vw;
 }
 
 #espaceTerreLune {
