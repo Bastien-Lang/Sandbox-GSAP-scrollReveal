@@ -11,7 +11,17 @@ import { TextPlugin } from "gsap/TextPlugin";
 
 
 
-console.log('Hello World!');
+
+gsap.registerPlugin(TextPlugin)
+let titre = document.querySelector('#titre');
+gsap.to(titre, {
+  duration: 2,
+  delay: 3,
+  text: "Découvrez notre système solaire",
+  ease: "none",
+});
+
+
 ScrollReveal().reveal('.soleil', { 
   delay: 0, 
   opacity: 0, 

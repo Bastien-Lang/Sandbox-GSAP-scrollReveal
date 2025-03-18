@@ -4,49 +4,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.scss">
     <link rel="stylesheet" href="https://codepen.io/GreenSock/pen/xxmzBrw/fcaef74061bb7a76e5263dfc076c363e.css">
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/MotionPathPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/TextPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/Observer.min.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="main.js" type="text/javascript"></script>
+    <script src="main.js" type="module"></script>
 </head>
 <body>
     <section id="espace">
         <section id="container" class="espace">
             <header>
+                <h1 id="titre">L'espace</h1>
                 <button id="startMeteorShower">Start The Meteor Shower</button>
             </header>
             <div id="pluiemeteore"></div>  
         </section>
         <div class="systemeSolaire">
             <div class="soleil">
+                <h1>L’étoile mystérieuse</h1>
+                <p>Le Soleil est une étoile. Il est notre étoile, au centre de notre Système solaire. Son diamètre, 1,4 million de km, est environ 110 fois plus grand que celui de la Terre. Et le Soleil représente à lui seul 99,9% de toute la masse du Système solaire.</p>
                 <img src="https://pngimg.com/uploads/sun/sun_PNG13424.png" alt="Photo Soleil" id="soleil">
             </div>
             <div class="mercure">
+                <h1>Mercure, une tellurique toute cabossée</h1>
+                <p>Mercure est une planète tellurique, c’est-à-dire faite de roches, comme ses voisines Vénus, Mars et la Terre. Mais elle présente la particularité d’avoir un noyau surdéveloppé et d’être essentiellement composée de fer.</p>
                 <img src="https://static.vecteezy.com/system/resources/previews/048/412/678/non_2x/mercury-planet-on-transparent-backdrop-free-png.png" alt="photo Mercure" id="mercure">
             </div>
             <div class="venus">
+                <h1>L’infernale Vénus</h1>
+                <p>Il faut dire que c’est la deuxième planète la plus proche du Soleil, à une distance de 108 millions de km. Mais s’il fait aussi chaud, c’est aussi parce que l’atmosphère de Vénus est composée à 96% de dioxyde de carbone (CO₂), à l’origine d’un puissant effet de serre. C’est-à-dire que ce gaz absorbe les rayonnements infrarouges et retient ainsi l’énergie solaire, ce qui augmente la température de la surface. Vénus est donc une planète inhospitalière.</p>
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Venus_globe_-_transparent_background.png/2048px-Venus_globe_-_transparent_background.png" alt="Photo Vénus" id="venus">
             </div>
             <div id="espaceTerreLune">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/2/22/Earth_Western_Hemisphere_transparent_background.png" alt="Photo Terre" id="terre">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Lune_ico.png" alt="Photo Lune" id="lune">
+                <div class="terre">
+                    <h1>Une très grosse pêche toute dure</h1>
+                    <p>La Terre est l’une des 4 planètes rocheuses (ou telluriques) avec Mercure, Vénus et Mars. La plus grande des 4, avec un diamètre de 12 700 km. La Terre est structurée comme… une pêche ! Au centre se trouve le noyau, entouré d’une couche épaisse appelée le manteau, elle-même recouverte d’une fine pellicule, la croûte. La peau de pêche ! </p>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/22/Earth_Western_Hemisphere_transparent_background.png" alt="Photo Terre" id="terre">
+                </div>
+                <div class="lune">
+                    <h1>La Lune, une cousine de la Terre… peu hospitalière</h1>
+                    <p>La Lune est une cousine de la Terre. Elle est composée des mêmes constituants que notre planète, car elle serait née d’un morceau de Terre, arraché lors d’une collision entre la jeune Terre en formation et une petite planète appelée Théia. C’était il y a environ 4,5 milliards d’années. Le choc a éjecté des matériaux en fusion qui se sont mis en orbite autour de notre planète où ils se sont agglomérés entre eux : la Lune était née. </p>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Lune_ico.png" alt="Photo Lune" id="lune">
+                </div>
             </div>
             <div class="mars">
+                <h1>L’étonnante petite rouge</h1>
+                <p>C’est une petite planète : par rapport à la Terre, elle est 7 fois moins volumineuse et 10 fois moins massive. Nous lui donnons aussi le nom de « planète rouge », car sa surface est recouverte de poussière riche en oxyde de fer, à l’origine de sa couleur rougeâtre (couleur de la rouille). Même si elle ressemble à un immense désert aride, détrompez-vous : il fait à sa surface -60°C en moyenne ! Il y fait froid parce qu’elle se situe plus loin du Soleil que la Terre : à 228 millions de km (contre 150 millions de km pour la distance Terre-Soleil). Aussi, son atmosphère est très fine, et ne retient pas la chaleur générée par l’énergie solaire. </p>
                 <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/Mars_Valles_Marineris_d%C3%A9tour%C3%A9.png" alt="Photo Mars" id="mars">
             </div>
             <div class="jupiter">
+                <h1>Jupiter, géante gazeuse</h1>
+                <p>Jupiter tient son nom du roi des dieux dans la mythologie romaine. Il faut dire qu’elle s’impose au milieu des 8 autres planètes de notre Système solaire : elle est la plus grande et la plus massive. Avec ses 13 9822 km de diamètre, Jupiter pourrait contenir plus de 1 300 Terres et elle est 2,5 fois plus massive que la totalité des autres planètes réunies. </p>
                 <img src="jupiter.png" alt="Photo Jupiter" id="jupiter">
             </div>
             <div class="saturne">
+                <h1>Saturne, une gigantesque boule de gaz</h1>
+                <p>Saturne est la 6ᵉ planète en partant du Soleil, située à 1,4 milliard de km de notre étoile. Elle est aussi la 2ᵉ plus grosse planète du Système solaire, après Jupiter. Sa taille et sa composition lui valent le nom de géante gazeuse”. Géante, parce qu’on pourrait faire rentrer 770 planètes Terres dans son volume.</p>
                 <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Saturnx.png" alt="Photo Saturne" id="saturne">
             </div>
             <div class="uranus">
+                <h1>Uranus, la planète la plus froide</h1>
+                <p>Uranus fait partie de la catégorie des géantes glacées qui se distinguent des planètes gazeuses, des grosses planètes entièrement recouvertes de gaz - principalement de l’hydrogène et de l’hélium - telles que Jupiter ou Saturne. N'imaginez pas vous promener sur Uranus, les géantes gazeuses et glacées n’ont pas de surface solide !</p>
                 <img src="uranus.png" alt="Photo Uranus" id="uranus">
             </div>
             <div class="neptune">
+                <h1>Neptune, la géante de glace</h1>
+                <p>Neptune est la dernière planète de notre Système solaire, située à 4,5 milliards de km de notre étoile, au-delà d’Uranus. La ressemblance entre les 2 planètes est telle que l’on pourrait presque parler de jumelles ! </p>
                 <img src="neptune.png" alt="Photo Neptune" id="neptune">
             </div>
         </div>
