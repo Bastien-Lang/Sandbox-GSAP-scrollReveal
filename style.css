@@ -140,4 +140,5 @@ header button{
 .systemeSolaire {
   position: relative;
   scroll-snap-type: x mandatory;
+  margin-top: 200px;
 }

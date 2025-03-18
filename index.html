@@ -20,17 +20,20 @@
 <body>
     <section id="espace">
         <section id="container" class="espace">
-            <header>
-                <h1 id="titre">L'espace</h1>
-                <button id="startMeteorShower">Start The Meteor Shower</button>
-            </header>
+           
             <div id="pluiemeteore"></div>  
-            <div>
-                <button id="startMeteorShower" href="#">Start The Meteor Shower</button>
-            </div>
-            <div id="pluiemeteore"></div>
         </section>
+
         <div class="systemeSolaire">
+
+            <div class="accueil">
+                <h1 id="titre">L'espace</h1>
+                <video autoplay muted loop id="myVideo">
+                    <source src="img/galaxy stock video...  copyright free galaxy video.mp4" type="video/mp4">
+                </video>
+                <button id="startMeteorShower">Start The Meteor Shower</button>
+
+            </div>
             <div class="soleil">
                 <h1>L’étoile mystérieuse</h1>
                 <p>Le Soleil est une étoile. Il est notre étoile, au centre de notre Système solaire. Son diamètre, 1,4 million de km, est environ 110 fois plus grand que celui de la Terre. Et le Soleil représente à lui seul 99,9% de toute la masse du Système solaire.</p>
@@ -243,6 +246,15 @@ ScrollReveal().reveal('#lune', {
         });
 
         gsap.registerPlugin(ScrollTrigger);
+
+        gsap.registerPlugin(TextPlugin)
+let titre = document.querySelector('#titre');
+gsap.to(titre, {
+  duration: 2,
+  delay: 3,
+  text: "Découvrez notre système solaire",
+  ease: "none",
+});
 
 // Sélectionne toutes les planètes
 

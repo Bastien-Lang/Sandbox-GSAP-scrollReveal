@@ -9,6 +9,6 @@
     "build": "vite build"
   },
   "devDependencies": {
-    "sass-embedded": "^1.85.1"
+    "sass-embedded": "^1.86.0"
   }
 }
