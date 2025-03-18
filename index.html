@@ -10,53 +10,64 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/MotionPathPlugin.min.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/ScrollToPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/SplitText.min.js"></script>
     <script src="main.js" type="text/javascript"></script>
 </head>
 <body>
     <section id="espace">
         <section id="container" class="espace">
-            <header>
-                <button id="startMeteorShower">Start The Meteor Shower</button>
-            </header>
-            <div id="pluiemeteore"></div>  
+            <div>
+                <button id="startMeteorShower" href="#">Start The Meteor Shower</button>
+            </div>
+            <div id="pluiemeteore"></div>
         </section>
         <div class="systemeSolaire">
             <div class="soleil">
                 <img src="https://pngimg.com/uploads/sun/sun_PNG13424.png" alt="Photo Soleil" id="soleil">
+                <div class="planet-text" id="soleil-text">This is the Sun, the center of our solar system!</div>
             </div>
             <div class="mercure">
                 <img src="https://static.vecteezy.com/system/resources/previews/048/412/678/non_2x/mercury-planet-on-transparent-backdrop-free-png.png" alt="photo Mercure" id="mercure">
+                <div class="planet-text" id="mercure-text">Mercury is the closest planet to the Sun.</div>
             </div>
             <div class="venus">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Venus_globe_-_transparent_background.png/2048px-Venus_globe_-_transparent_background.png" alt="Photo Vénus" id="venus">
+                <div class="planet-text" id="venus-text">Venus is similar in size and structure to Earth.</div>
             </div>
             <div id="espaceTerreLune">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/2/22/Earth_Western_Hemisphere_transparent_background.png" alt="Photo Terre" id="terre">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Lune_ico.png" alt="Photo Lune" id="lune">
+                <div class="planet-text" id="terre-text">Earth is the only planet known to support life.</div>
             </div>
             <div class="mars">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/Mars_Valles_Marineris_d%C3%A9tour%C3%A9.png" alt="Photo Mars" id="mars">
+                <div class="planet-text" id="mars-text">Mars is known as the Red Planet.</div>
             </div>
             <div class="jupiter">
                 <img src="jupiter.png" alt="Photo Jupiter" id="jupiter">
+                <div class="planet-text" id="jupiter-text">Jupiter is the largest planet in our solar system.</div>
             </div>
             <div class="saturne">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Saturnx.png" alt="Photo Saturne" id="saturne">
+                <div class="planet-text" id="saturne-text">Saturn is famous for its beautiful ring system.</div>
             </div>
             <div class="uranus">
                 <img src="uranus.png" alt="Photo Uranus" id="uranus">
+                <div class="planet-text" id="uranus-text">Uranus is an ice giant and the seventh planet from the Sun.</div>
             </div>
             <div class="neptune">
                 <img src="neptune.png" alt="Photo Neptune" id="neptune">
+                <div class="planet-text" id="neptune-text">Neptune is known for its deep blue color.</div>
             </div>
         </div>
     </section>
 
-    <script src="main.js" ></script>
     <script>
+        // Animation des météorites
         document.getElementById('startMeteorShower').addEventListener('click', () => {
             const pluiemeteore = document.getElementById('pluiemeteore');
-            
+
             function createMeteor() {
                 const meteor = document.createElement('img');
                 meteor.src = 'img/meteor.png';
@@ -65,122 +76,146 @@
                 meteor.style.width = '100px';
                 meteor.style.height = '100px';
                 meteor.style.top = '-100px';
-                meteor.style.left = `${Math.random() * window.innerWidth}px`; 
+                meteor.style.left = `${Math.random() * window.innerWidth}px`;
                 meteor.style.zIndex = 15000;
-                
+
                 pluiemeteore.appendChild(meteor);
                 return meteor;
             }
-            
+
             function animateMeteor(meteor) {
-                gsap.to(meteor, { 
-                    x: 400 - 800, 
-                    y: window.innerHeight +200, 
-                    duration: 1, 
+                gsap.to(meteor, {
+                    x: 400 - 800,
+                    y: innerHeight +1000,
+                    duration: 1,
                     ease: 'power1.in',
                     onComplete: () => meteor.remove()
                 });
             }
-            
+
             let intervalId = setInterval(() => {
                 for (let i = 0; i < 2; i++) {
                     const meteor = createMeteor();
                     animateMeteor(meteor);
                 }
             }, 100);
-            
+
             setTimeout(() => {
                 clearInterval(intervalId);
             }, 5000);
         });
-        ScrollReveal().reveal('.soleil', { 
-  delay: 0, 
-  opacity: 0, 
-  duration: 1000, 
-  origin: 'left', 
-  distance: '5000px', 
-  reset: true 
+
+        ScrollReveal().reveal('.soleil', {
+  delay: 0,
+  opacity: 0,
+  duration: 1000,
+  origin: 'left',
+  distance: '5000px',
+  reset: true
 });
 
-ScrollReveal().reveal('.mercure', { 
-  delay: 0, 
-  opacity: 0, 
-  duration: 1000, 
-  origin: 'right', 
-  distance: '5000px', 
-  reset: true 
+ScrollReveal().reveal('.mercure', {
+  delay: 0,
+  opacity: 0,
+  duration: 1000,
+  origin: 'right',
+  distance: '5000px',
+  reset: true
 });
 
-ScrollReveal().reveal('.venus', { 
-  delay: 0, 
-  opacity: 0, 
-  duration: 1000, 
-  origin: 'left', 
-  distance: '5000px', 
-  reset: true 
+ScrollReveal().reveal('.venus', {
+  delay: 0,
+  opacity: 0,
+  duration: 1000,
+  origin: 'left',
+  distance: '5000px',
+  reset: true
 });
 
-ScrollReveal().reveal('#terre', { 
-  delay: 0, 
-  opacity: 0, 
-  duration: 1000, 
-  origin: 'left', 
-  distance: '5000px', 
-  reset: true 
+ScrollReveal().reveal('#terre', {
+  delay: 0,
+  opacity: 0,
+  duration: 1000,
+  origin: 'left',
+  distance: '5000px',
+  reset: true
 });
 
-ScrollReveal().reveal('.mars', { 
-  delay: 0, 
-  opacity: 0, 
-  duration: 1000, 
-  origin: 'left', 
-  distance: '5000px', 
-  reset: true 
+ScrollReveal().reveal('.mars', {
+  delay: 0,
+  opacity: 0,
+  duration: 1000,
+  origin: 'left',
+  distance: '5000px',
+  reset: true
 });
 
-ScrollReveal().reveal('.jupiter', { 
-  delay: 0, 
-  opacity: 0, 
-  duration: 1000, 
-  origin: 'right', 
-  distance: '5000px', 
-  reset: true 
+ScrollReveal().reveal('.jupiter', {
+  delay: 0,
+  opacity: 0,
+  duration: 1000,
+  origin: 'right',
+  distance: '5000px',
+  reset: true
 });
 
-ScrollReveal().reveal('.saturne', { 
-  delay: 0, 
-  opacity: 0, 
-  duration: 1000, 
-  origin: 'left', 
-  distance: '5000px', 
-  reset: true 
+ScrollReveal().reveal('.saturne', {
+  delay: 0,
+  opacity: 0,
+  duration: 1000,
+  origin: 'left',
+  distance: '5000px',
+  reset: true
 });
 
-ScrollReveal().reveal('.uranus', { 
-  delay: 0, 
-  opacity: 0, 
-  duration: 1000, 
-  origin: 'right', 
-  distance: '5000px', 
-  reset: true 
+ScrollReveal().reveal('.uranus', {
+  delay: 0,
+  opacity: 0,
+  duration: 1000,
+  origin: 'right',
+  distance: '5000px',
+  reset: true
 });
 
-ScrollReveal().reveal('.neptune', { 
-  delay: 0, 
-  opacity: 0, 
-  duration: 1000, 
-  origin: 'left', 
-  distance: '5000px', 
-  reset: true 
+ScrollReveal().reveal('.neptune', {
+  delay: 0,
+  opacity: 0,
+  duration: 1000,
+  origin: 'left',
+  distance: '5000px',
+  reset: true
 });
-ScrollReveal().reveal('#lune', { 
-  delay: 0, 
-  opacity: 0, 
-  duration: 1000, 
-  origin: 'right', 
-  distance: '5000px', 
-  reset: true 
+ScrollReveal().reveal('#lune', {
+  delay: 0,
+  opacity: 0,
+  duration: 1000,
+  origin: 'right',
+  distance: '5000px',
+  reset: true
 });
+
+        gsap.utils.toArray('.planet-text').forEach(planetText => {
+            gsap.fromTo(planetText, {
+                opacity: 0,
+                y: 50,
+            }, {
+                opacity: 1,
+                y: 0,
+                duration: 1.5,
+                scrollTrigger: {
+                    trigger: planetText,
+                    start: "top 80%",  // Déclenchement quand la planète est à 80% de la fenêtre
+                    once: true,        // L'animation ne se produit qu'une seule fois
+                    toggleActions: "play none none none", // Pas de réinitialisation
+                }
+            });
+        });
+
+        gsap.registerPlugin(ScrollTrigger);
+
+// Sélectionne toutes les planètes
+
+
     </script>
 </body>
 </html>

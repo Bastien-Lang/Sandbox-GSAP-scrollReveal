@@ -110,3 +110,34 @@ body{
 #espaceTerreLune {
   flex-direction: row;
 }
+
+header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+
+}
+
+header button{
+  display: flex;
+  justify-content: center;
+}
+#startMeteorShower {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Pour centrer verticalement */
+  z-index: 100000;
+}
+
+.planet-text{
+  font-size: 1.5rem;
+  position: absolute;
+}
+
+.systemeSolaire {
+  position: relative;
+  scroll-snap-type: x mandatory;
+}
