@@ -227,14 +227,19 @@ body{
 }
 
 #startMeteorShower{
-  z-index: 50;
+  z-index: 20000;
   position: absolute;
   top: 60vh;
   left: 15vh;
 
 }
 
-
+.pluiemeteore{
+  z-index: 10000;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 
 #myVideo {
   width: 100%;
@@ -243,6 +248,7 @@ body{
   mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0) 100%);
   -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0) 100%);
   transition: opacity 1.5s ease-in-out;
+  
 }
 
 
