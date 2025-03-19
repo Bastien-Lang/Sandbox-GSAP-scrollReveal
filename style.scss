@@ -1,6 +1,3 @@
-/* Global styles come from external css https://codepen.io/GreenSock/pen/xxmzBrw/fcaef74061bb7a76e5263dfc076c363e.css
-*/  
-
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap");
 
@@ -10,13 +7,25 @@ $bg-gradient: linear-gradient(
   rgba(0, 0, 0, 0.3) 100%
 );
 
+$primary-font: "Cormorant Garamond", serif;
+$secondary-font: "Bebas Neue", sans-serif;
+$text-color: white;
+$bg-color: black;
+$header-height: 7em;
+$box-sizing: border-box;
+$user-select: none;
+$z-index-base: 2;
+$z-index-high: 20000;
+$transition-duration: 1.5s;
+$ease-in-out: ease-in-out;
+
 * {
-  box-sizing: border-box;
-  user-select: none;
+  box-sizing: $box-sizing;
+  user-select: $user-select;
 }
 
 a {
-  color: #fff;
+  color: $text-color;
   text-decoration: none;
 }
 
@@ -24,9 +33,10 @@ body {
   margin: 0;
   padding: 0;
   height: 100vh;
-  color: white;
-  background: black;
-  font-family: "Cormorant Garamond", serif;
+  color: $text-color;
+  background: $bg-color;
+  font-family: $primary-font;
+  overflow-x: hidden;
 }
 
 h2 {
@@ -38,6 +48,10 @@ h2 {
   color: hsl(0, 0, 80%);
   width: 90vw;
   max-width: 1200px;
+
+  * {
+    will-change: transform;
+  }
 }
 
 header {
@@ -48,8 +62,8 @@ header {
   padding: 0 5%;
   width: 100%;
   z-index: 3;
-  height: 7em;
-  font-family: "Bebas Neue", sans-serif;
+  height: $header-height;
+  font-family: $secondary-font;
   font-size: clamp(0.66rem, 2vw, 1rem);
   letter-spacing: 0.5em;
 }
@@ -79,7 +93,7 @@ section {
     background-position: center;
 
     h2 {
-      z-index: 2;
+      z-index: $z-index-base;
     }
 
     .clip-text {
@@ -87,7 +101,6 @@ section {
     }
   }
 }
-
 
 .first {
   .bg {
@@ -125,119 +138,139 @@ section {
   }
 }
 
-h2 * {
-  will-change: transform;
-}
-
-
-body{
-  overflow-x: hidden;
-}
-
 .box {
   display: block;
   margin-top: 1rem;
 }
 
-
-.punchline{
+.punchline {
   opacity: 0;
 }
 
-*{
-  box-sizing: border-box;
-}
-
-#univers{
+#univers {
   width: 100vw;
   min-height: 100dvh;
   overflow: hidden;
-  background:top / cover no-repeat url('Univers.jpg') ;
+  background: top / cover no-repeat url('Univers.jpg');
 }
 
-#espace{
+#espace {
   width: 100vw;
   min-height: 800dvh;
   overflow: hidden;
-  background:top / contain repeat url('https://cdn.pixabay.com/photo/2016/01/27/15/25/space-1164579_1280.png')  ;
+  background: top / contain repeat url('https://cdn.pixabay.com/photo/2016/01/27/15/25/space-1164579_1280.png');
   position: relative;
 
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 69, 249, 0.079); /* Bleu semi-transparent */
+    pointer-events: none;
+    filter: contrast(0.8) brightness(1.5) blur(1px);
+  }
 }
 
-#espace::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(10, 69, 249, 0.079); /* Bleu semi-transparent */
-  pointer-events: none;
-      filter: contrast(0.8) brightness(1.5) blur(1px);
+.systemeSolaire {
+  $planet-width: 30%;
+  $planet-margin: 5%;
+  $planet-img-width: 50%;
+
+  > div {
+    display: flex;
+    align-items: center;
+    min-height: 100dvh;
+    justify-content: center;
+
+    > div {
+      width: $planet-width;
+
+      img {
+        max-width: $planet-img-width;
+      }
+    }
+  }
+
+  .soleil > div {
+    margin-right: $planet-margin;
+    width: 23% !important;
+  }
+
+  .mercure > div {
+    margin-right: $planet-margin;
+    width: 25% !important;
+  }
+
+  .venus > div {
+    margin-right: $planet-margin;
+    width: 25% !important;
+  }
+
+  .mars > div {
+    margin-right: 7%;
+  }
+
+  .jupiter > div {
+    width: 25% !important;
+  }
+
+  .terre, .lune {
+    display: flex;
+    width: auto !important;
+    align-items: center;
+    max-width: 50%;
+
+    > div {
+      width: 50%;
+      margin-right: 7%;
+      margin-left: 7%;
+    }
+  }
+
+  .lune {
+    flex-direction: row-reverse;
+  }
+
+  div::-webkit-scrollbar {
+    display: none;
+  }
+
+  h1, p {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  h1 {
+    text-transform: uppercase;
+  }
+
+  .soleil > img, .mercure > img, .venus > img, .mars > img, .jupiter > img, .saturne > img, .uranus > img, .neptune > img, #terre, #lune, .soleil > div p, .mercure > div p, .venus > div p, .mars > div p, .jupiter > div p, .saturne > div p, .uranus > div p, .neptune > div p, .terre > div p, .lune > div p {
+    z-index: $z-index-base;
+  }
 }
 
-
-
-.systemeSolaire>div{
-  display: flex;
-  align-items: center;
-  min-height: 100dvh;
-  justify-content: center;
-}
-
-
-.systemeSolaire>div>div{
-  width: 30%;
-}
-
-.soleil > div{
-  margin-right: 2%;
-  width: 23% !important;
-}
-.mercure > div{
-  margin-right: 5%;
-  width: 25% !important;
-}
-.venus > div{
-  margin-right: 5%;
-  width: 25% !important;
-}
-
-.mars > div{
-  margin-right: 7%;
-}
-
-.jupiter > div{
-  width: 25% !important;
-}
-.systemeSolaire>div>div>img{
-  max-width: 50%;
-}
-
-#titre{
-
+#titre {
   position: absolute;
   z-index: 10;
   display: flex;
   left: 15vh;
   top: 45vh;
-
 }
 
-#startMeteorShower{
-  z-index: 20000;
+#startMeteorShower {
+  z-index: $z-index-high;
   position: absolute;
   top: 60vh;
   left: 15vh;
-
 }
 
-.pluiemeteore{
+.pluiemeteore {
   z-index: 10000;
   position: absolute;
   top: 0;
   left: 0;
-  
 }
 
 #myVideo {
@@ -246,81 +279,52 @@ body{
   z-index: 1;
   mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0) 100%);
   -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0) 100%);
-  transition: opacity 1.5s ease-in-out;
+  transition: opacity $transition-duration $ease-in-out;
   object-fit: cover;
   min-width: 100vw;
 }
 
-
-
-.terre, .lune{
-  display: flex;
-  width: auto !important;
-  align-items: center;
-  max-width: 50%;
-}
-
-
-.systemeSolaire div::-webkit-scrollbar {
-  display: none;
-}
-.systemeSolaire h1, p{
-  font-family: 'Space Grotesk', sans-serif;
-}
-.systemeSolaire h1{
-  text-transform: uppercase;
-}
-.terre>div, .lune>div{
-  width: 50%;
-  margin-right: 7%;
-  margin-left: 7%;
-}
-
-.lune{
-  flex-direction: row-reverse;
-}
-
-#soleil{
+#soleil {
   width: 60vw;
 }
 
-#mercure{
+#mercure {
   width: 10vw;
 }
 
-#venus{
+#venus {
   width: 17vw;
 }
 
-#terre{
-  width: 20vw; 
-  height: 20vw; 
+#terre {
+  width: 20vw;
+  height: 20vw;
   border-radius: 50%;
   object-fit: cover;
 }
 
-#lune{
+#lune {
   width: 5vw;
   object-fit: contain;
 }
 
-#mars{
+#mars {
   width: 17vw;
 }
 
-#jupiter{
+#jupiter {
   width: 50vw;
 }
 
-#saturne{
+#saturne {
   width: 45vw;
 }
 
-#uranus{
+#uranus {
   width: 37vw;
 }
 
-#neptune{
+#neptune {
   width: 38vw;
 }
 
@@ -328,165 +332,164 @@ body{
   flex-direction: row;
 }
 
-.soleil>img, .mercure>img, .venus>img, .mars>img, .jupiter>img, .saturne>img, .uranus>img, .neptune>img,#terre, #lune, .soleil>div p, .mercure>div p, .venus>div p, .mars>div p, .jupiter>div p, .saturne>div p, .uranus>div p, .neptune>div p, .terre>div p, .lune>div p{
-  z-index: 99;
-}
-
-/* Animation pour la poussière d'étoile */
 @keyframes trailDustEffect {
   0% {
-      opacity: 1;
-      transform: scale(1) translateX(0) translateY(0);
+    opacity: 1;
+    transform: scale(1) translateX(0) translateY(0);
   }
   100% {
-      opacity: 0;
-      transform: scale(0.5) translateX(20px) translateY(20px);
+    opacity: 0;
+    transform: scale(0.5) translateX(20px) translateY(20px);
   }
 }
 
-/* Animation de l'étoile */
 @keyframes shootingEffect {
   0% {
-      transform: scale(1);
+    transform: scale(1);
   }
   100% {
-      transform: scale(1.5);
+    transform: scale(1.5);
   }
 }
 
-
-
-
-
-
 @media screen and (max-width: 992px) {
-  .systemeSolaire>div>div{
-    width: 50%;
+  .systemeSolaire {
+    > div > div {
+      width: 50%;
+    }
+
+    .terre > div, .lune > div {
+      width: 100%;
+      margin-right: 0;
+      margin-left: 0;
+    }
+
+    h1 {
+      font-size: 4.5rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
   }
-  .terre>div, .lune>div{
-    width: 100%;
-    margin-right: 0;
-    margin-left: 0;
-  }
-  .systemeSolaire h1{
-    font-size: 4.5rem;
-  }
-  .systemeSolaire p{
-    font-size: 1rem;
-  }
-  #titre{
+
+  #titre {
     left: 5vh;
     top: 35vh;
   }
-  #startMeteorShower{
+
+  #startMeteorShower {
     top: 70vh;
     left: 5vh;
   }
 
-  .soleil, .mercure, .venus, .mars, .jupiter, .saturne, .uranus, .neptune{  
+  .soleil, .mercure, .venus, .mars, .jupiter, .saturne, .uranus, .neptune {
     align-items: center;
     flex-direction: column-reverse;
     justify-content: center;
-  }
-  .soleil>div, .mercure>div, .venus>div, .mars>div, .jupiter>div, .saturne>div, .uranus>div, .neptune>div{  
-    width: 85% !important;
-    text-align: center;
+
+    > div {
+      width: 85% !important;
+      text-align: center;
+    }
   }
 
-  #espaceTerreLune{
+  #espaceTerreLune {
     flex-direction: column;
     justify-content: space-evenly;
   }
 
-  .terre, .lune{
+  .terre, .lune {
     max-width: 85% !important;
     justify-content: center;
     flex-direction: column-reverse;
     text-align: center;
   }
 
-  #soleil{
+  #soleil {
     width: 100vw;
   }
-  
-  #mercure{
+
+  #mercure {
     width: 30vw;
   }
-  
-  #venus{
+
+  #venus {
     width: 35vw;
   }
-  
-  #terre{
-    width: 44vw; 
-    height: 44vw; 
+
+  #terre {
+    width: 44vw;
+    height: 44vw;
     border-radius: 50%;
     object-fit: cover;
   }
-  
-  #lune{
+
+  #lune {
     width: 16vw;
     object-fit: contain;
   }
-  
-  #mars{
+
+  #mars {
     width: 40vw;
   }
-  
-  #jupiter{
+
+  #jupiter {
     width: 90vw;
   }
-  
-  #saturne{
+
+  #saturne {
     width: 80vw;
   }
-  
-  #uranus{
+
+  #uranus {
     width: 60vw;
   }
-  
-  #neptune{
+
+  #neptune {
     width: 60vw;
   }
 }
 
-
-
-
 @media screen and (max-width: 827px) {
-  #startMeteorShower{
-    top: 65vh;  
+  #startMeteorShower {
+    top: 65vh;
   }
-  #titre{
+
+  #titre {
     left: 5vh;
     top: 20vh;
   }
 }
+
 @media screen and (max-width: 720px) {
-  #startMeteorShower{
-    top: 90vh;  
+  #startMeteorShower {
+    top: 90vh;
   }
 
-  .systemeSolaire h1{
+  .systemeSolaire h1 {
     font-size: 3rem;
   }
 }
+
 @media screen and (max-width: 535px) {
-  #titre{
+  #titre {
     left: 2vh;
     top: 20vh;
     font-size: 3.2rem;
   }
-  .systemeSolaire h1{
+
+  .systemeSolaire h1 {
     font-size: 2rem;
   }
 }
+
 @media screen and (max-width: 375px) {
-  .systemeSolaire h1{
+  .systemeSolaire h1 {
     font-size: 1.5rem;
   }
 
-  #titre{
+  #titre {
     left: 2vh;
     top: 30vh;
   }
