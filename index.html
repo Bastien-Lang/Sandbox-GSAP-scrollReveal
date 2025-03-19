@@ -32,7 +32,7 @@
             <div class="accueil">
                 <h1 id="titre">L'espace</h1>
                 <video autoplay muted loop id="myVideo">
-                    <source src="img/galaxy stock video...  copyright free galaxy video.mp4" type="video/mp4">
+                    <source src="img/galaxy stock video...  copyright free galaxy video.mp4" type="video/mp4" autoplay muted loop >
                 </video>
                 <button id="startMeteorShower">Start The Meteor Shower</button>
                 
@@ -161,7 +161,15 @@
             }, 5000);
         });
 
-        ScrollReveal().reveal('.soleil', {
+ScrollReveal().reveal('.soleil>div', {
+  delay: 0,
+  opacity: 0,
+  duration: 1000,
+  origin: 'right',
+  distance: '5000px',
+  reset: true
+});
+ScrollReveal().reveal('.soleil img', {
   delay: 0,
   opacity: 0,
   duration: 1000,
@@ -170,7 +178,15 @@
   reset: true
 });
 
-ScrollReveal().reveal('.mercure', {
+ScrollReveal().reveal('.mercure>div', {
+  delay: 0,
+  opacity: 0,
+  duration: 1000,
+  origin: 'left',
+  distance: '5000px',
+  reset: true
+});
+ScrollReveal().reveal('.mercure img', {
   delay: 0,
   opacity: 0,
   duration: 1000,
@@ -179,7 +195,15 @@ ScrollReveal().reveal('.mercure', {
   reset: true
 });
 
-ScrollReveal().reveal('.venus', {
+ScrollReveal().reveal('.venus>div', {
+  delay: 0,
+  opacity: 0,
+  duration: 1000,
+  origin: 'right',
+  distance: '5000px',
+  reset: true
+});
+ScrollReveal().reveal('.venus img', {
   delay: 0,
   opacity: 0,
   duration: 1000,
@@ -188,7 +212,15 @@ ScrollReveal().reveal('.venus', {
   reset: true
 });
 
-ScrollReveal().reveal('#terre', {
+ScrollReveal().reveal('.terre>div', {
+  delay: 0,
+  opacity: 0,
+  duration: 1000,
+  origin: 'right',
+  distance: '5000px',
+  reset: true
+});
+ScrollReveal().reveal('.terre img', {
   delay: 0,
   opacity: 0,
   duration: 1000,
@@ -197,7 +229,15 @@ ScrollReveal().reveal('#terre', {
   reset: true
 });
 
-ScrollReveal().reveal('.mars', {
+ScrollReveal().reveal('.lune>div', {
+  delay: 0,
+  opacity: 0,
+  duration: 1000,
+  origin: 'right',
+  distance: '5000px',
+  reset: true
+});
+ScrollReveal().reveal('.lune img', {
   delay: 0,
   opacity: 0,
   duration: 1000,
@@ -206,7 +246,32 @@ ScrollReveal().reveal('.mars', {
   reset: true
 });
 
-ScrollReveal().reveal('.jupiter', {
+ScrollReveal().reveal('.mars>div', {
+  delay: 0,
+  opacity: 0,
+  duration: 1000,
+  origin: 'right',
+  distance: '5000px',
+  reset: true
+});
+ScrollReveal().reveal('.mars img', {
+  delay: 0,
+  opacity: 0,
+  duration: 1000,
+  origin: 'left',
+  distance: '5000px',
+  reset: true
+});
+
+ScrollReveal().reveal('.jupiter>div', {
+  delay: 0,
+  opacity: 0,
+  duration: 1000,
+  origin: 'left',
+  distance: '5000px',
+  reset: true
+});
+ScrollReveal().reveal('.jupiter img', {
   delay: 0,
   opacity: 0,
   duration: 1000,
@@ -215,7 +280,15 @@ ScrollReveal().reveal('.jupiter', {
   reset: true
 });
 
-ScrollReveal().reveal('.saturne', {
+ScrollReveal().reveal('.saturne>div', {
+  delay: 0,
+  opacity: 0,
+  duration: 1000,
+  origin: 'right',
+  distance: '5000px',
+  reset: true
+});
+ScrollReveal().reveal('.saturne img', {
   delay: 0,
   opacity: 0,
   duration: 1000,
@@ -224,7 +297,15 @@ ScrollReveal().reveal('.saturne', {
   reset: true
 });
 
-ScrollReveal().reveal('.uranus', {
+ScrollReveal().reveal('.uranus>div', {
+  delay: 0,
+  opacity: 0,
+  duration: 1000,
+  origin: 'left',
+  distance: '5000px',
+  reset: true
+});
+ScrollReveal().reveal('.uranus img', {
   delay: 0,
   opacity: 0,
   duration: 1000,
@@ -233,15 +314,7 @@ ScrollReveal().reveal('.uranus', {
   reset: true
 });
 
-ScrollReveal().reveal('.neptune', {
-  delay: 0,
-  opacity: 0,
-  duration: 1000,
-  origin: 'left',
-  distance: '5000px',
-  reset: true
-});
-ScrollReveal().reveal('#lune', {
+ScrollReveal().reveal('.neptune>div', {
   delay: 0,
   opacity: 0,
   duration: 1000,
@@ -249,6 +322,15 @@ ScrollReveal().reveal('#lune', {
   distance: '5000px',
   reset: true
 });
+ScrollReveal().reveal('.neptune img', {
+  delay: 0,
+  opacity: 0,
+  duration: 1000,
+  origin: 'left',
+  distance: '5000px',
+  reset: true
+});
+
 
         gsap.utils.toArray('.planet-text').forEach(planetText => {
             gsap.fromTo(planetText, {
@@ -276,6 +358,9 @@ gsap.to(titre, {
   delay: 3,
   text: "Découvrez notre système solaire",
   ease: "none",
+  repeat: -1,
+  repeatDelay: 3,
+  yoyo:true
 });
 
 

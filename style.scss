@@ -176,9 +176,7 @@ body{
       filter: contrast(0.8) brightness(1.5) blur(1px);
 }
 
-.systemeSolaire{
- 
-}
+
 
 .systemeSolaire>div{
   display: flex;
@@ -243,13 +241,14 @@ body{
 }
 
 #myVideo {
-  width: 100%;
+  min-height: 100vh;
   position: relative;
   z-index: 1;
   mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0) 100%);
   -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0) 100%);
   transition: opacity 1.5s ease-in-out;
-  
+  object-fit: cover;
+  min-width: 100vw;
 }
 
 
@@ -356,3 +355,137 @@ body{
 
 
 
+
+
+@media screen and (max-width: 992px) {
+  .systemeSolaire>div>div{
+    width: 50%;
+  }
+  .terre>div, .lune>div{
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+  }
+  .systemeSolaire h1{
+    font-size: 4.5rem;
+  }
+  .systemeSolaire p{
+    font-size: 1rem;
+  }
+  #titre{
+    left: 5vh;
+    top: 35vh;
+  }
+  #startMeteorShower{
+    top: 70vh;
+    left: 5vh;
+  }
+
+  .soleil, .mercure, .venus, .mars, .jupiter, .saturne, .uranus, .neptune{  
+    align-items: center;
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+  .soleil>div, .mercure>div, .venus>div, .mars>div, .jupiter>div, .saturne>div, .uranus>div, .neptune>div{  
+    width: 85% !important;
+    text-align: center;
+  }
+
+  #espaceTerreLune{
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  .terre, .lune{
+    max-width: 85% !important;
+    justify-content: center;
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  #soleil{
+    width: 100vw;
+  }
+  
+  #mercure{
+    width: 30vw;
+  }
+  
+  #venus{
+    width: 35vw;
+  }
+  
+  #terre{
+    width: 44vw; 
+    height: 44vw; 
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  #lune{
+    width: 16vw;
+    object-fit: contain;
+  }
+  
+  #mars{
+    width: 40vw;
+  }
+  
+  #jupiter{
+    width: 90vw;
+  }
+  
+  #saturne{
+    width: 80vw;
+  }
+  
+  #uranus{
+    width: 60vw;
+  }
+  
+  #neptune{
+    width: 60vw;
+  }
+}
+
+
+
+
+@media screen and (max-width: 827px) {
+  #startMeteorShower{
+    top: 65vh;  
+  }
+  #titre{
+    left: 5vh;
+    top: 20vh;
+  }
+}
+@media screen and (max-width: 720px) {
+  #startMeteorShower{
+    top: 90vh;  
+  }
+
+  .systemeSolaire h1{
+    font-size: 3rem;
+  }
+}
+@media screen and (max-width: 535px) {
+  #titre{
+    left: 2vh;
+    top: 20vh;
+    font-size: 3.2rem;
+  }
+  .systemeSolaire h1{
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: 375px) {
+  .systemeSolaire h1{
+    font-size: 1.5rem;
+  }
+
+  #titre{
+    left: 2vh;
+    top: 30vh;
+  }
+}
