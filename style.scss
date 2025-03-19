@@ -247,6 +247,7 @@ body{
   -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0) 100%);
   transition: opacity 1.5s ease-in-out;
   object-fit: cover;
+  min-width: 100vw;
 }
 
 
