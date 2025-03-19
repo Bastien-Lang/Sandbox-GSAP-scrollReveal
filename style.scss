@@ -239,6 +239,7 @@ body{
   position: absolute;
   top: 0;
   left: 0;
+  
 }
 
 #myVideo {
@@ -258,6 +259,11 @@ body{
   width: auto !important;
   align-items: center;
   max-width: 50%;
+}
+
+
+.systemeSolaire div::-webkit-scrollbar {
+  display: none;
 }
 .systemeSolaire h1, p{
   font-family: 'Space Grotesk', sans-serif;
@@ -322,3 +328,31 @@ body{
 #espaceTerreLune {
   flex-direction: row;
 }
+
+
+
+/* Animation pour la poussière d'étoile */
+@keyframes trailDustEffect {
+  0% {
+      opacity: 1;
+      transform: scale(1) translateX(0) translateY(0);
+  }
+  100% {
+      opacity: 0;
+      transform: scale(0.5) translateX(20px) translateY(20px);
+  }
+}
+
+/* Animation de l'étoile */
+@keyframes shootingEffect {
+  0% {
+      transform: scale(1);
+  }
+  100% {
+      transform: scale(1.5);
+  }
+}
+
+
+
+

@@ -16,6 +16,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/ScrollToPlugin.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/SplitText.min.js"></script>
     <script src="main.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
@@ -36,6 +37,11 @@
                 <button id="startMeteorShower">Start The Meteor Shower</button>
                 
             </div>
+
+            <div id="shootingStar"></div>
+
+
+
 
             <div class="soleil">
                 <div>
@@ -125,7 +131,8 @@
                 meteor.style.width = '100px';
                 meteor.style.height = '100px';
                 meteor.style.top = '-100px';
-                meteor.style.left = `${Math.random() * window.innerWidth}px`;
+                meteor.style.transform = 'rotate(-10deg)';
+                meteor.style.left = `${20+Math.random() * window.innerWidth+50}px`;
                 meteor.style.zIndex = 15000;
 
                 pluiemeteore.appendChild(meteor);
@@ -134,7 +141,7 @@
 
             function animateMeteor(meteor) {
                 gsap.to(meteor, {
-                    x: 400 - 800,
+                    x: 400 - 1800,
                     y: innerHeight +1000,
                     duration: 1,
                     ease: 'power1.in',
@@ -147,7 +154,7 @@
                     const meteor = createMeteor();
                     animateMeteor(meteor);
                 }
-            }, 100);
+            }, 50);
 
             setTimeout(() => {
                 clearInterval(intervalId);
@@ -271,7 +278,71 @@ gsap.to(titre, {
   ease: "none",
 });
 
-// Sélectionne toutes les planètes
+
+document.addEventListener("DOMContentLoaded", () => {
+    const star = document.createElement("div");
+    star.id = "shootingStar";
+    document.body.appendChild(star);
+
+    Object.assign(star.style, {
+        position: "fixed",
+        width: "30px",
+        height: "30px",
+        backgroundColor: "white",
+        borderRadius: "50%",
+        boxShadow: "0 0 10px white",
+        top: "48.5vh",
+        left: "75vw",
+        zIndex: "1"
+
+    });
+
+    const zigZagPath = [
+        { x: 0, y: 0 },
+        { x: "-950vw", y: "10vh" },
+        { x: "-100vw", y: "20vh" },
+        { x: "-20vw", y: "40vh" },
+        { x: "40vw", y: "60vh" },
+        { x: "30vw", y: "80vh" },
+        { x: "-550vw", y: "100vh" },
+        { x: "60vw", y: "120vh" },
+        { x: "70vw", y: "140vh" },
+        { x: "80vw", y: "160vh" },
+        { x: "-950vw", y: "180vh" },
+        { x: "100vw", y: "200vh" },
+        { x: "-950vw", y: "10vh" },
+        { x: "100vw", y: "20vh" },
+        { x: "20vw", y: "40vh" },
+        { x: "-540vw", y: "60vh" },
+        { x: "30vw", y: "80vh" },
+        { x: "50vw", y: "100vh" },
+        { x: "-660vw", y: "120vh" },
+        { x: "70vw", y: "140vh" },
+        { x: "80vw", y: "160vh" },
+        { x: "-990vw", y: "180vh" },
+        { x: "100vw", y: "200vh" },
+
+        
+    ];
+
+    let lastScroll = window.scrollY;
+
+    window.addEventListener("scroll", () => {
+        let scrollPos = window.scrollY;
+        let progress = Math.min(scrollPos / (document.body.scrollHeight - window.innerHeight), 1);
+        let index = Math.floor(progress * (zigZagPath.length - 1));
+        let nextIndex = Math.min(index + 1, zigZagPath.length - 1);
+        
+        let start = zigZagPath[index];
+        let end = zigZagPath[nextIndex];
+        let localProgress = (progress * (zigZagPath.length - 1)) % 1;
+        
+        let newX = parseFloat(start.x) + (parseFloat(end.x) - parseFloat(start.x)) * localProgress;
+        let newY = parseFloat(start.y) + (parseFloat(end.y) - parseFloat(start.y)) * localProgress;
+        
+        gsap.to(star, { x: newX, y: newY, duration: 0.3, ease: "power1.out" });
+    });
+});
 
 
     </script>
