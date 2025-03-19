@@ -328,7 +328,9 @@ body{
   flex-direction: row;
 }
 
-
+.soleil>img, .mercure>img, .venus>img, .mars>img, .jupiter>img, .saturne>img, .uranus>img, .neptune>img,#terre, #lune, .soleil>div p, .mercure>div p, .venus>div p, .mars>div p, .jupiter>div p, .saturne>div p, .uranus>div p, .neptune>div p, .terre>div p, .lune>div p{
+  z-index: 99;
+}
 
 /* Animation pour la poussière d'étoile */
 @keyframes trailDustEffect {
